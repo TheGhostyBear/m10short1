@@ -5,6 +5,7 @@
 	--light-accent: #fffded;
 	--light: white;
 	--dark: black;
+	--link-color: color-mix(in srgb, var(--accent-color) 65%, var(--primary-color) 35%);
 }
 
 /* reset */
@@ -24,12 +25,17 @@ body {
 }
 header, section, aside, footer { padding: 1em; }
 h1, h2, h3, p, article, blockquote { padding-bottom: .5em; }
-h1 { font-size: 150%; }
+h1 { 
+	font-size: 150%; 
+	font-family: 'Ink Free', cursive;
+}
 h2 { font-size: 120%; }
 h3 { font-size: 110%; }
 a:focus, a:hover { font-style: italic; }
+section a { color: var(--link-color); }
 ul { list-style-type: none; }
 li { padding-bottom: .75em; }
+li i { margin-right: 0.5em; color: var(--primary-color); }
 
 /* the styles for the header */
 header {
@@ -87,12 +93,25 @@ article {
 	border-top: 3px solid var(--primary-color);
 	padding-top: .5em;
 	margin-bottom: .5em;
-	& img {
-		float: left;
-		margin: .25em 1em 1em 0;
-		border: 1px solid var(--dark);
-		width: min(100%, 225px);
-	}
+}
+
+/* figure styles */
+figure {
+	float: left;
+	margin: .25em 1em 1em 0;
+	width: min(100%, 225px);
+}
+
+figure img {
+	border: 1px solid var(--dark);
+	width: 100%;
+}
+
+figcaption {
+	font-style: italic;
+	font-size: 90%;
+	text-align: center;
+	margin-bottom: 0.5em;
 }
 
 /* the styles for the aside */
